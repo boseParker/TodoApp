@@ -70,14 +70,14 @@ function TodoApp() {
 
         {tasks.length > 0 &&
           tasks.map((task, index) => (
-            <div className="d-flex mb-5 gap-3 justify-content-between flex-wrap bg-light ps-4 pe-4 p-3" key={index}>
-              {isEditing == index ? (
-                <div className="d-flex gap-2 align-items-center">
+            <div className="d-flex  mb-5 gap-3 justify-content-between flex-wrap bg-light ps-4 pe-4 p-3" key={index}>
+              {isEditing === index ? (
+                <div className="d-flex flex-column flex-sm-row gap-2 align-items-center">
                   <input type="text" value={editText} onChange={handleEditChange} style={{ border: "1px solid", padding: "5px" }} />
                   <button className="bg-success rounded text-light p-1" onClick={() => saveEdit(index)}>Save</button>
                   <button className="bg-secondary rounded text-light p-1" onClick={cancelEdit}> Cancel</button>
                 </div>) : (
-                <div className=" d-flex  gap-5 justify-content-between" style={{width:"100%"}}>
+                <div className=" d-flex flex-column flex-sm-row gap-5 justify-content-between" style={{width:"100%"}}>
                   <h4 className="text-start">{task}</h4>
                   <div className="d-flex gap-3">
                   <button className="bg-info rounded text-light p-2" onClick={() => startEditing(index)}>Edit</button>
